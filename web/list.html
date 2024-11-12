@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>HTML List Styles</title>
+ <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: aqua;
+  }
+  h1 {
+    text-align: center;
+    font-style: italic;
+    background-color: white;
+    color: navy;
+  }
+  h2 {
+    color: palevioletred;
+  }
+  li {
+    font-size: 20px;
+  }
+ </style>
+</head>
+<body>
+ <h1>Unordered List</h1>
+
+ <h2>No Bullets</h2>
+ <ul type="none">
+   <li>Apple</li>
+   <li>Banana</li>
+ </ul>
+
+ <h2>Disc Bullets (default)</h2>
+ <ul type="disc">
+   <li>Apple</li>
+   <li>Banana</li>
+ </ul>
+
+ <h2>Circle Bullets</h2>
+ <ul type="circle">
+   <li>Apple</li>
+   <li>Banana</li>
+ </ul>
+
+ <h2>Square Bullets</h2>
+ <ul type="square">
+   <li>Apple</li>
+   <li>Banana</li>
+ </ul>
+
+ <h1>Ordered List</h1>
+
+ <h2>Lowercase Letters</h2>
+ <ol type="a">
+   <li>Apple</li>
+   <li>Banana</li>
+ </ol>
+
+ <h2>Uppercase Letters</h2>
+ <ol type="A">
+   <li>Apple</li>
+   <li>Banana</li>
+ </ol>
+
+ <h2>Lowercase Roman</h2>
+ <ol type="i">
+   <li>Apple</li>
+   <li>Banana</li>
+ </ol>
+
+ <h2>Uppercase Roman</h2>
+ <ol type="I">
+   <li>Apple</li>
+   <li>Banana</li>
+ </ol>
+
+ <h1>Definition List</h1>
+ <dl>
+   <dt><h2><b>Apple</b></h2></dt>
+   <dd style="font-size: 20px;">A sweet, edible fruit produced by an apple tree.</dd>
+
+   <dt><h2><b>Cherry</b></h2></dt>
+   <dd style="font-size: 20px;">A small, round stone fruit that is typically bright or dark red.</dd>
+
+   <dt><h2><b>Date</b></h2></dt>
+   <dd style="font-size: 20px;">The fruit of the date palm, a sweet fruit with a pit.</dd>
+ </dl>
+
+ <h1>Nested List</h1>
+ <ol>
+   <li>Apple</li>
+   <ul>
+      <li>The Apples are fresh</li>
+      <ul type="square">
+         <li>Banana</li>
+         <ol>
+            <li>Banana is a fruit</li>
+         </ol>
+      </ul>
+   </ul>
+ </ol>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .details {
+            color: #666;
+            line-height: 1.5;
+        }
+        .details p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Application Details</h2>
+    <div class="details">
+        <p><strong>Full Name:</strong> <span id="displayName"></span></p>
+        <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+        <p><strong>Phone Number:</strong> <span id="displayPhone"></span></p>
+        <p><strong>Position Applied For:</strong> <span id="displayPosition"></span></p>
+        <p><strong>Experience:</strong> <span id="displayExperience"></span></p>
+        <p><strong>Cover Letter:</strong></p>
+        <p id="displayCoverLetter" style="white-space: pre-wrap;"></p>
+    </div>
+</div>
+
+<script>
+    // Function to get URL parameters
+    function getParam(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    // Display the data from URL parameters
+    document.getElementById('displayName').textContent = getParam('name');
+    document.getElementById('displayEmail').textContent = getParam('email');
+    document.getElementById('displayPhone').textContent = getParam('phone');
+    document.getElementById('displayPosition').textContent = getParam('position');
+    document.getElementById('displayExperience').textContent = getParam('experience');
+    document.getElementById('displayCoverLetter').textContent = getParam('coverLetter');
+</script>
+
+</body>
+</html>

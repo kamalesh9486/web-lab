@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="bookstyle.xsl"?>
+<bookstore>
+    <book category="Fiction">
+        <title>The Alchemist</title>
+        <author>Paulo Coelho</author>
+        <year>1988</year>
+        <price>19.99</price>
+    </book>
+    <book category="Science Fiction">
+        <title>Dune</title>
+        <author>Frank Herbert</author>
+        <year>1965</year>
+        <price>25.99</price>
+    </book>
+    <book category="Fantasy">
+        <title>Harry Potter and the Sorcerer's Stone</title>
+        <author>J.K. Rowling</author>
+        <year>1997</year>
+        <price>29.99</price>
+    </book>
+</bookstore>

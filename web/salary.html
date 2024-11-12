@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information Form</title>
+    <style>
+        /* Styling for the form container */
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        /* Styling for input fields and labels */
+        .input-field {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        /* Styling for the submit button */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Styling for the results section */
+        #results {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f1f1f1;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Form for employee information -->
+    <form id="employeeForm" onsubmit="return calculatePay()">
+        <h2>Employee Information</h2>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" class="input-field" placeholder="Enter employee name" required>
+
+        <label for="basicSalary">Basic Salary:</label>
+        <input type="number" id="basicSalary" class="input-field" placeholder="Enter basic salary" required>
+
+        <button type="submit">Calculate Pay</button>
+    </form>
+
+    <!-- Section to display results -->
+    <div id="results"></div>
+
+    <script>
+        function calculatePay() {
+            // Get input values
+            const name = document.getElementById("name").value;
+            const basicSalary = parseFloat(document.getElementById("basicSalary").value);
+
+            // Calculate DA, HRA, PF, TAX
+            const da = basicSalary * 0.1; // 10% of Basic Salary
+            const hra = basicSalary * 0.15; // 15% of Basic Salary
+            const pf = basicSalary * 0.05; // 5% of Basic Salary
+            const tax = basicSalary * 0.08; // 8% of Basic Salary
+
+            // Calculate Gross Pay, Deductions, and Net Pay
+            const grossPay = basicSalary + da + hra;
+            const deduction = pf + tax;
+            const netPay = grossPay - deduction;
+
+            // Display results
+            document.getElementById("results").innerHTML = `
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Basic Salary:</strong> ${basicSalary.toFixed(2)}</p>
+                <p><strong>Dearness Allowance (DA):</strong> ${da.toFixed(2)}</p>
+                <p><strong>House Rent Allowance (HRA):</strong> ${hra.toFixed(2)}</p>
+                <p><strong>Provident Fund (PF):</strong> ${pf.toFixed(2)}</p>
+                <p><strong>Tax:</strong> ${tax.toFixed(2)}</p>
+                <p><strong>Gross Pay:</strong> ${grossPay.toFixed(2)}</p>
+                <p><strong>Total Deductions:</strong> ${deduction.toFixed(2)}</p>
+                <p><strong>Net Pay:</strong> ${netPay.toFixed(2)}</p>
+            `;
+
+            // Prevent form submission
+            return false;
+        }
+    </script>
+</body>
+
+</html>

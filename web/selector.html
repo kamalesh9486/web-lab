@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector Types Example</title>
+    <style>
+        /* Universal Selector */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Type Selector */
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* ID Selector */
+        #introduction {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border: 1px solid #bdc3c7;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        /* Class Selector */
+        .section {
+            margin: 20px auto;
+            padding: 15px;
+            max-width: 800px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+        }
+
+        /* Descendant Selector */
+        .section p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Child Selector */
+        .section > h2 {
+            color: #2980b9;
+            margin-bottom: 10px;
+        }
+
+        /* Adjacent Sibling Selector */
+       
+        /* Attribute Selector */
+        a[href^="https"] {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Pseudo-Class Selector */
+        a:hover {
+            color: #c0392b;
+            text-decoration: underline;
+        }
+
+        /* Pseudo-Element Selector */
+        .section p::first-line {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* Group Selector */
+        h2, h3 {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Understanding CSS Selectors</h1>
+
+<!-- ID Selector -->
+<div id="introduction">
+    <p>This page demonstrates various CSS selectors for styling different parts of the HTML document efficiently.</p>
+</div>
+
+<!-- Class Selector -->
+<div class="section">
+    <!-- Child Selector for the heading -->
+    <h2>Type, Class, and ID Selectors</h2>
+    <!-- Adjacent Sibling Selector applies italic style -->
+    <p>These selectors target elements based on their type, class, or unique ID.</p>
+    <!-- Descendant Selector for paragraph inside .section -->
+    <p>Classes allow you to style multiple elements, while IDs are unique and should only be used once per page.</p>
+</div>
+
+<div class="section">
+    <h2>Attribute Selectors</h2>
+    <p>Attribute selectors allow targeting elements based on their attributes. For example:</p>
+    <!-- Attribute Selector for links starting with 'https' -->
+    <a href="https://example.com">Visit Example</a>
+    <a href="http://anotherexample.com">Visit Another Example</a>
+</div>
+
+<div class="section">
+    <h2>Pseudo-Classes and Pseudo-Elements</h2>
+    <p>Pseudo-classes style elements based on their state or position, like hovering over a link.</p>
+    <p>Pseudo-elements, like <code>::first-line</code>, style specific parts of elements.</p>
+</div>
+
+</body>
+</html>

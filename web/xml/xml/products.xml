@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="products.xsl"?>
+<products>
+    <product>
+        <name>Smartphone</name>
+        <category>Electronics</category>
+        <price>699.99</price>
+    </product>
+    <product>
+        <name>Running Shoes</name>
+        <category>Sportswear</category>
+        <price>129.99</price>
+    </product>
+    <product>
+        <name>Wireless Headphones</name>
+        <category>Electronics</category>
+        <price>199.99</price>
+    </product>
+    <product>
+        <name>Blender</name>
+        <category>Kitchen Appliances</category>
+        <price>89.99</price>
+    </product>
+</products>

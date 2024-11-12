@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            background-color: #5cb85c;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Job Application Form</h2>
+    <form id="jobApplicationForm" >
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="position">Position Applied For</label>
+        <input type="text" id="position" name="position" required>
+
+        <label for="experience">Experience (in years)</label>
+        <input type="text" id="experience" name="experience" required>
+
+        <label for="coverLetter">Cover Letter</label>
+        <textarea id="coverLetter" name="coverLetter" rows="5" required></textarea>
+
+        <input type="button" value="Submit Application" onclick="newpage()">
+    </form>
+</div>
+
+<script>
+function newpage(){
+        // Retrieve form data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const position = document.getElementById('position').value;
+        const experience = document.getElementById('experience').value;
+        const coverLetter = document.getElementById('coverLetter').value;
+
+        // Create query parameters for the next page
+        const queryParams = `?name=${encodeURIComponent(name)}
+                            &email=${encodeURIComponent(email)}
+                            &phone=${encodeURIComponent(phone)}
+                            &position=${encodeURIComponent(position)}
+                            &experience=${encodeURIComponent(experience)}
+                            &coverLetter=${encodeURIComponent(coverLetter)}`;
+
+        // Redirect to display page with parameters
+        window.location.href = 'disp.html' + queryParams;
+    }
+</script>
+
+</body>
+</html>
